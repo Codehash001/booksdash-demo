@@ -15,5 +15,5 @@ export interface Book {
   
   export type ChatMessage = {
     type: 'user' | 'bot';
-    content: string | { books: Book[]; resources: AdditionalResource[] };
+    content: any;
   };
