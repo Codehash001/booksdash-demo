@@ -73,7 +73,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                   <Button
                     key={index}
                     variant="outline"
-                    className="mr-2 mb-2 text-sm hover:bg-blue-50"
+                    className="mr-2 mb-2 text-sm hover:ring-1 ring-stone-300"
                     onClick={() => handleExampleQueryClick(q)}
                   >
                     {q}
@@ -121,7 +121,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                 className={`flex items-start space-x-4 mb-4 ${message.type === 'user' ? 'justify-end' : ''}`}
               >
                 {message.type === 'bot' && (
-                  <div className="rounded-full p-2 border border-black bg-white">
+                  <div className="bg-black dark:bg-white text-white dark:text-black p-2 rounded-full">
                     <BookOpen size={20} />
                   </div>
                 )}

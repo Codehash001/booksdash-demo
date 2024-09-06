@@ -26,7 +26,7 @@ const QueryInput: React.FC<QueryInputProps> = ({ query, setQuery, handleQuerySub
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Ask for a book recommendation..."
-          className="flex-grow rounded-xl shadow-md h-10 dark:bg-stone-900 dark:text-gray-100 ring-gray-400 ring-1"
+          className="flex-grow rounded-xl shadow-md h-10 dark:bg-black dark:text-gray-100 ring-gray-400 ring-1"
           onKeyPress={(e) => e.key === 'Enter' && handleQuerySubmit()}
         />
         <Button size="icon" className='rounded-full h-10 w-10 shadow-md' onClick={handleQuerySubmit}>
