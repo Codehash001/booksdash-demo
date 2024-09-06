@@ -8,17 +8,20 @@ const LandingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-stone-100 dark:bg-stone-900 text-stone-800 dark:text-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <header className="flex justify-between items-center mb-16">
-          <div className="flex items-center space-x-2">
-            <BookOpen className="w-8 h-8 text-stone-700 dark:text-stone-300" />
-            <span className="text-xl font-bold">Booksdash</span>
-          </div>
+        <header className="flex justify-between items-center">
           <nav>
           </nav>
         </header>
 
         <main>
-          <section className="text-center mb-20">
+          
+          <section className="text-center mb-20 flex flex-col items-center">
+          <div className="flex items-center space-x-2 mb-10">
+          <div className="bg-black dark:bg-white text-white dark:text-black p-2 rounded-full">
+            <BookOpen size={20} />
+          </div>
+            <span className="text-2xl font-bold">Booksdash</span>
+          </div>
             <motion.h1 
               className="text-5xl md:text-6xl font-bold mb-6"
               initial={{ opacity: 0, y: -20 }}
