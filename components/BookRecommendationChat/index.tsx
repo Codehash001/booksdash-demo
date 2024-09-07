@@ -113,7 +113,7 @@ const BookRecommendationChat: React.FC = () => {
   };
 
   return (
-    <div className={`flex h-screen bg-secondary `}>
+    <div className={`flex h-screen bg-secondary md:p-0 p-2`}>
       <Sidebar 
         isSidebarCollapsed={isSidebarCollapsed}
         isDrawerOpen={isDrawerOpen}

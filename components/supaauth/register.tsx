@@ -16,7 +16,7 @@ export default function Register() {
 	const verify = urlParams.get("verify");
 
 	return (
-		<div className="w-full sm:w-[26rem] shadow sm:p-5  border dark:border-zinc-800 rounded-md">
+		<div className="w-full sm:w-[26rem] md:shadow-xl shadow-3xl sm:p-5  border dark:border-zinc-800 rounded-md">
 			<div className="p-5 space-y-5">
 				<div className="text-center space-y-3">
 				<div className="w-full h-full flex items-center justify-center space-x-3">

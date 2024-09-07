@@ -21,7 +21,7 @@ const QueryInput: React.FC<QueryInputProps> = ({ query, setQuery, handleQuerySub
       transition={{ duration: 0.3 }}
       className="p-4 pb-6 bg-secondary"
     >
-      <div className="max-w-4xl mx-auto flex items-center space-x-2">
+      <div className="max-w-4xl mx-auto flex items-center space-x-2 p-0 md:px-2">
         <Input
           value={query}
           onChange={(e) => setQuery(e.target.value)}

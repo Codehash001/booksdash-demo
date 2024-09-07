@@ -11,21 +11,30 @@ const BookRecommendation: React.FC<Book> = ({ title, author, forWhom, summary, i
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
-    <Card className="mb-4 hover:shadow-lg transition-shadow duration-300 dark:bg-stone-900">
-      <CardContent className="p-4 flex flex-col sm:flex-row">
-        <div className="w-full sm:w-1/3 mb-4 sm:mb-0 sm:pr-4">
-          <img src={imageUrl} alt={title} className="w-full h-auto object-cover rounded" />
-        </div>
-        <div className="w-full sm:w-2/3">
+    <Card className="md:mb-4 hover:shadow-lg transition-shadow duration-300 dark:bg-stone-900">
+      <CardContent className="p-4 flex flex-col space-x-2">
+      <div className='md:hidden flex flex-col'>
           <h3 className="text-lg font-semibold text-foreground">{title}</h3>
           <p className="text-sm text-gray-600 dark:text-gray-400">{author}</p>
-          <p className="text-sm text-gray-600 dark:text-gray-400 mt-2"><strong>For:</strong> {forWhom}</p>
-          <p className="text-sm mt-2 mb-4"><strong>Summary:</strong> {summary}</p>
-          <div className="flex flex-wrap gap-2">
-            <Button variant="default" size="sm" className="w-full sm:w-auto mb-2 sm:mb-0">Buy Now</Button>
+          <p className="text-sm text-gray-600 dark:text-gray-400 md:my-4 my-2"><strong>For:</strong> {forWhom}</p>
+          </div>
+        <div className='flex flex-row space-x-2'>
+        <div className=" mb-4 sm:mb-0 sm:pr-4 w-[80%]  ">
+          <img src={imageUrl} alt={title} className="h-auto object-cover rounded" />
+          
+          <p className="md:text-sm mt-2 mb-4 text-xs hidden md:flex ">{summary}</p>
+        </div>
+        <div className="md:w-[120%] w-[50%]">
+          <div className='hidden md:flex flex-col'>
+          <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400">{author}</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 md:my-4 my-2"><strong>For:</strong> {forWhom}</p>
+          </div>
+          <div className="flex flex-col space-y-2 md:w-[80%]">
+            <Button variant="default" size="sm" className="w-full sm:w-auto sm:mb-0">Buy Now</Button>
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger asChild>
-                <Button variant="default" size="sm" className="w-full sm:w-auto mb-2 sm:mb-0">Full summary</Button>
+                <Button variant="default" size="sm" className="w-full sm:w-auto sm:mb-0">Full summary</Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[425px] p-4">
                 <DialogHeader>
@@ -63,8 +72,13 @@ const BookRecommendation: React.FC<Book> = ({ title, author, forWhom, summary, i
               </DialogContent>
             </Dialog>
             <Button variant="outline" size="sm" className="w-full sm:w-auto">More Details</Button>
+            <Button variant="outline" size="sm" className="w-full sm:w-auto">More Details</Button>
+            <Button variant="outline" size="sm" className="w-full sm:w-auto">More Details</Button>
+            <Button variant="outline" size="sm" className="w-full sm:w-auto">More Details</Button>
           </div>
         </div>
+        </div>
+        <p className="md:text-sm text-xs md:hidden flex ">{summary}</p>
       </CardContent>
     </Card>
   );

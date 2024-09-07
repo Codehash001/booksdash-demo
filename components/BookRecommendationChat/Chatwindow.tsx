@@ -17,7 +17,6 @@ interface ChatWindowProps {
   handleQuerySubmit: () => void;
 }
 
-// Type guard to check if content is of type { books: Book[]; resources: Resource[] }
 const isBookRecommendationContent = (
   content: string | { books: Book[]; resources: Resource[] }
 ): content is { books: Book[]; resources: Resource[] } => {
@@ -49,7 +48,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
             exit={{ opacity: 0, transition: { duration: 0.3 } }}
           >
             <motion.div
-              className="text-center mb-8"
+              className="text-center mb-8 px-4"
               initial={{ y: 20 }}
               animate={{ y: 0 }}
               transition={{ delay: 0.3 }}
@@ -58,12 +57,12 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                 <div className="bg-black dark:bg-white text-white dark:text-black p-2 rounded-full">
                   <BookOpen size={20} />
                 </div>
-                <h1 className="text-3xl font-semibold">Welcome to Booksdash</h1>
+                <h1 className="text-2xl sm:text-3xl font-semibold">Welcome to Booksdash</h1>
               </div>
-              <p className="text-lg text-gray-600 dark:text-gray-300">What is on your mind?</p>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">What is on your mind?</p>
             </motion.div>
             <motion.div
-              className="mb-8"
+              className="mb-8 w-full px-4"
               initial={{ y: 20 }}
               animate={{ y: 0 }}
               transition={{ delay: 0.3 }}
@@ -73,7 +72,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                   <Button
                     key={index}
                     variant="outline"
-                    className="mr-2 mb-2 text-sm hover:ring-1 ring-stone-300"
+                    className="mr-2 mb-2 text-xs sm:text-sm hover:ring-1 ring-stone-300"
                     onClick={() => handleExampleQueryClick(q)}
                   >
                     {q}
@@ -82,7 +81,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
               </div>
             </motion.div>
             <motion.div
-              className="w-full max-w-md"
+              className="w-full max-w-md px-4"
               initial={{ y: 20 }}
               animate={{ y: 0 }}
               transition={{ delay: 0.4 }}
@@ -118,30 +117,32 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className={`flex items-start space-x-4 mb-4 ${message.type === 'user' ? 'justify-end' : ''}`}
+                className={`flex flex-col sm:flex-row items-start space-y-2 sm:space-y-0 sm:space-x-4 mb-4 ${
+                  message.type === 'user' ? 'sm:justify-end' : ''
+                }`}
               >
                 {message.type === 'bot' && (
-                  <div className="bg-black dark:bg-white text-white dark:text-black p-2 rounded-full">
-                    <BookOpen size={20} />
+                  <div className='w-8 h-8 sm:w-10 sm:h-10 bg-primary text-primary-foreground flex items-center justify-center rounded-full flex-shrink-0 '>
+                    <BookOpen size={16} />
                   </div>
                 )}
                 <div
-                  className={`flex-1 p-4 rounded-lg ${
+                  className={`flex-1 p-3 sm:p-4 rounded-lg ${
                     message.type === 'user'
-                      ? 'bg-primary/10 ml-12'
-                      : 'bg-secondary border border-gray-200 dark:border-stone-600 mr-12'
-                  }`}
+                      ? 'bg-primary/10 sm:ml-12 self-end'
+                      : 'bg-secondary border border-gray-200 dark:border-stone-600 sm:mr-12'
+                  } max-w-full sm:max-w-[80%] mt-1`}
                 >
                   {typeof message.content === 'string' ? (
-                    <p>{message.content}</p>
+                    <p className="text-sm sm:text-base">{message.content}</p>
                   ) : isBookRecommendationContent(message.content) ? (
                     <div className="flex flex-col">
-                      <p className="mb-4">Here are some book recommendations based on your query:</p>
+                      <p className="mb-4 text-sm sm:text-base">Here are some book recommendations based on your query:</p>
                       <div className="w-full">
                         {['Most Trending', 'Most Popular', 'Most Recent'].map((category) => (
-                          <div key={category}>
-                            <h3 className="text-lg font-semibold mb-2">{category}</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div key={category} className="mb-4">
+                            <h3 className="text-base sm:text-lg font-semibold mb-2">{category}</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                               {message.content.books
                                 .filter((book: { category: string; }) => book.category === category)
                                 .map((book: React.JSX.IntrinsicAttributes & Book, bookIndex: React.Key | null | undefined) => (
@@ -153,7 +154,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                       </div>
                       <div className="w-full">
                         <h3 className="text-sm font-semibold mb-2">Additional Resources</h3>
-                        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                           {message.content.resources.map((resource, resourceIndex) => (
                             <AdditionalResource key={resourceIndex} {...resource} />
                           ))}
@@ -163,13 +164,15 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                   ) : null}
                 </div>
                 {message.type === 'user' && (
-                  <Avatar className="h-10 w-10">
+                  <div className='flex sm:justify-start justify-end  order-first sm:order-last flex-shrink-0 w-full'>
+                                      <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
                     <AvatarImage
                       src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg"
                       alt="User"
                     />
                     <AvatarFallback>U</AvatarFallback>
                   </Avatar>
+                  </div>
                 )}
               </motion.div>
             ))}
