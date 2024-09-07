@@ -118,7 +118,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className={`flex flex-col sm:flex-row items-start space-y-2 sm:space-y-0 sm:space-x-4 mb-4 ${
-                  message.type === 'user' ? 'sm:justify-end' : ''
+                  message.type === 'user' ? 'self-end w-full' : ''
                 }`}
               >
                 {message.type === 'bot' && (
@@ -164,7 +164,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                   ) : null}
                 </div>
                 {message.type === 'user' && (
-                  <div className='flex sm:justify-start justify-end  order-first sm:order-last flex-shrink-0 w-full'>
+                  <div className='flex sm:justify-start justify-end  order-first sm:order-last flex-shrink-0 w-full md:w-auto'>
                                       <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
                     <AvatarImage
                       src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg"
