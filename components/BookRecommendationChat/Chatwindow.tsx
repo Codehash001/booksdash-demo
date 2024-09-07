@@ -187,7 +187,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                                   initial={{ y: -20 }}
                                   animate={{ y: 0 }}
                                   transition={{ duration: 0.3, delay: 0.1 }}
-                                  className="w-full grid grid-flow-col grid-cols-3 space-x-2"
+                                  className="w-full grid md:grid-flow-col md:grid-cols-3  gap-3"
                                 >
                                   {message.content.resources.map((resource, resourceIndex) => (
                                     <motion.div
