@@ -109,7 +109,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="w-full max-w-7xl mx-auto"
+            className="w-full max-w-7xl mx-auto "
           >
             {chatMessages.map((message, index) => (
               <motion.div
@@ -117,7 +117,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className={`flex flex-col sm:flex-row items-start space-y-2 sm:space-y-0 sm:space-x-4 mb-4 ${
+                className={`flex flex-col sm:flex-row items-start justify-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4 ${
                   message.type === 'user' ? 'self-end w-full' : ''
                 }`}
               >
@@ -129,8 +129,8 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                 <div
                   className={`flex-1 p-3 sm:p-4 rounded-lg ${
                     message.type === 'user'
-                      ? 'bg-primary/10 sm:ml-12 self-end'
-                      : 'bg-secondary border border-gray-200 dark:border-stone-600 sm:mr-12'
+                      ? 'bg-primary/10  self-end'
+                      : 'bg-secondary border border-gray-200 dark:border-stone-600 '
                   } max-w-full sm:max-w-[80%] mt-1`}
                 >
                   {typeof message.content === 'string' ? (
@@ -164,7 +164,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                   ) : null}
                 </div>
                 {message.type === 'user' && (
-                  <div className='flex sm:justify-start justify-end  order-first sm:order-last flex-shrink-0 w-full md:w-auto'>
+                  <div className='flex  justify-end  order-first sm:order-last flex-shrink-0 w-full sm:w-auto'>
                                       <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
                     <AvatarImage
                       src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg"
