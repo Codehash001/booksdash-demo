@@ -81,7 +81,16 @@ const BookRecommendationChat: React.FC = () => {
             forWhom: t('Business strategists and technology enthusiasts'),
             summary: t('When new technologies cause great firms to fail.'),
             imageUrl:'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1347654027i/2615.jpg'
+          },
+          {
+            category: t('Most Recent'),
+            title: t('Crossing the Chasm'),
+            author: t('Geoffrey A. Moore'),
+            forWhom: t('Entrepreneurs and marketers'),
+            summary: t('Marketing and selling high-tech products to mainstream customers.'),
+            imageUrl: 'https://jumpbooks.lk/ceruvef/uploads/2021/04/Crossing-the-Chasm.jpg'
           }
+          
         ],
         resources: [
           {
@@ -113,18 +122,16 @@ const BookRecommendationChat: React.FC = () => {
   };
 
   return (
-    <div className={`flex h-screen bg-secondary md:p-0 p-2`}>
+    <div className={`flex h-screen bg-secondary md:p-0 p-2 w-full`}>
       <Sidebar 
         isSidebarCollapsed={isSidebarCollapsed}
         isDrawerOpen={isDrawerOpen}
         closeDrawer={closeDrawer}
-      />
-      <main className="flex-1 flex flex-col overflow-hidden">
+        toggleDarkMode={toggleDarkMode} darkMode={darkMode}      />
+      <main className="flex-1 flex flex-col overflow-hidden w-full">
         <Header 
-          toggleSidebar={toggleSidebar} 
-          toggleDarkMode={toggleDarkMode} 
+          toggleSidebar={toggleSidebar}  
           isSidebarCollapsed={isSidebarCollapsed}
-          darkMode={darkMode}
           openDrawer={openDrawer}
         />
         <ChatWindow 

@@ -2,11 +2,17 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { BookOpen, Send } from 'lucide-react';
+import { BookOpen, ChevronDown, Send } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import BookRecommendation from './BookRecommendation';
 import AdditionalResource from './AdditionalResource';
 import { ChatMessage, Book, AdditionalResource as Resource } from './types';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 interface ChatWindowProps {
   chatStarted: boolean;
@@ -38,7 +44,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
   ];
 
   return (
-    <div className="flex-1 overflow-y-auto md:p-4 relative">
+    <div className="flex-1 overflow-y-auto md:p-4 relative w-full">
       <AnimatePresence>
         {!chatStarted && (
           <motion.div
@@ -109,7 +115,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="w-full max-w-7xl mx-auto "
+            className="w-full mx-auto "
           >
             {chatMessages.map((message, index) => (
               <motion.div
@@ -140,8 +146,10 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                       <p className="mb-4 text-sm sm:text-base">Here are some book recommendations based on your query:</p>
                       <div className="w-full">
                         {['Most Trending', 'Most Popular', 'Most Recent'].map((category) => (
-                          <div key={category} className="mb-4">
-                            <h3 className="text-base sm:text-lg font-semibold mb-2">{category}</h3>
+                          <div key={category} className="mb-4 pb-2">
+                            <div className='flex items-end justify-between w-full'>
+                            <h3 className="text-base sm:text-lg font-bold mb-2">{category}</h3>
+                            </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                               {message.content.books
                                 .filter((book: { category: string; }) => book.category === category)
@@ -149,29 +157,67 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                                   <BookRecommendation key={bookIndex} {...book} />
                                 ))}
                             </div>
+                            <div className='flex w-full justify-end'>
+                            <Button className='italic text-sm' variant={"link"}>Load more {category} books</Button>
+                            </div>
                           </div>
                         ))}
                       </div>
-                      <div className="w-full">
-                        <h3 className="text-sm font-semibold mb-2">Additional Resources</h3>
-                        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                          {message.content.resources.map((resource, resourceIndex) => (
-                            <AdditionalResource key={resourceIndex} {...resource} />
-                          ))}
-                        </div>
-                      </div>
+                      <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                              >
+                                
+                      <Accordion type="single" collapsible className="w-full">
+                        <AccordionItem value="additional-resources">
+                          <AccordionTrigger className="text-sm font-semibold group">
+                            Additional Resources
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <AnimatePresence>
+                              <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                              >
+                                <motion.div
+                                  initial={{ y: -20 }}
+                                  animate={{ y: 0 }}
+                                  transition={{ duration: 0.3, delay: 0.1 }}
+                                  className="w-full grid grid-flow-col grid-cols-3 space-x-2"
+                                >
+                                  {message.content.resources.map((resource, resourceIndex) => (
+                                    <motion.div
+                                      key={resourceIndex}
+                                      initial={{ opacity: 0, y: 20 }}
+                                      animate={{ opacity: 1, y: 0 }}
+                                      transition={{ duration: 0.3, delay: 0.1 + resourceIndex * 0.1 }}
+                                    >
+                                      <AdditionalResource {...resource} />
+                                    </motion.div>
+                                  ))}
+                                </motion.div>
+                              </motion.div>
+                            </AnimatePresence>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+                      </motion.div>
                     </div>
                   ) : null}
                 </div>
                 {message.type === 'user' && (
-                  <div className='flex  justify-end  order-first sm:order-last flex-shrink-0 w-full sm:w-auto'>
-                                      <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
-                    <AvatarImage
-                      src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg"
-                      alt="User"
-                    />
-                    <AvatarFallback>U</AvatarFallback>
-                  </Avatar>
+                  <div className='flex justify-end order-first sm:order-last flex-shrink-0 w-full sm:w-auto'>
+                    <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
+                      <AvatarImage
+                        src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg"
+                        alt="User"
+                      />
+                      <AvatarFallback>U</AvatarFallback>
+                    </Avatar>
                   </div>
                 )}
               </motion.div>

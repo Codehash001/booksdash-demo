@@ -6,35 +6,38 @@ import { Button } from "@/components/ui/button";
 import { Book } from './types';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Apple, PlayCircle, BookOpen } from 'lucide-react';
+import ShinyButton from '../magicui/shiny-button';
+import { BorderBeam } from "@/components/magicui/border-beam";
+import ShineBorder from '../magicui/shine-border';
 
 const BookRecommendation: React.FC<Book> = ({ title, author, forWhom, summary, imageUrl }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
     <Card className="md:mb-4 hover:shadow-lg transition-shadow duration-300 dark:bg-stone-900">
-      <CardContent className="p-4 flex flex-col space-x-2">
+      <CardContent className="p-4 flex flex-col ">
       <div className='md:hidden flex flex-col'>
           <h3 className="text-lg font-semibold text-foreground">{title}</h3>
           <p className="text-sm text-gray-600 dark:text-gray-400">{author}</p>
           <p className="text-sm text-gray-600 dark:text-gray-400 md:my-4 my-2"><strong>For:</strong> {forWhom}</p>
           </div>
-        <div className='flex flex-row space-x-2'>
-        <div className=" mb-4 sm:mb-0 sm:pr-4 w-[80%]  ">
+        <div className='flex flex-row items-start'>
+        <div className=" mb-4 sm:mb-0 mr-4 w-[80%]  ">
           <img src={imageUrl} alt={title} className="h-auto object-cover rounded" />
           
           <p className="md:text-sm mt-2 mb-4 text-xs hidden md:flex ">{summary}</p>
         </div>
-        <div className="md:w-[120%] w-[50%]">
+        <div className="md:w-[120%] w-[60%]">
           <div className='hidden md:flex flex-col'>
-          <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+          <h1 className="text-lg font-semibold text-foreground">{title}</h1>
           <p className="text-sm text-gray-600 dark:text-gray-400">{author}</p>
           <p className="text-sm text-gray-600 dark:text-gray-400 md:my-4 my-2"><strong>For:</strong> {forWhom}</p>
           </div>
           <div className="flex flex-col space-y-2 md:w-[80%]">
-            <Button variant="default" size="sm" className="w-full sm:w-auto sm:mb-0">Buy Now</Button>
-            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger asChild>
-                <Button variant="default" size="sm" className="w-full sm:w-auto sm:mb-0">Full summary</Button>
+                {/*  */}
+                <Button variant={"ghost"} size="sm" className="w-full sm:w-auto p-0 m-0"><ShinyButton text="Full summary" className="w-full sm:mb-0 text-primary-foreground text-sm"/></Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[425px] p-4">
                 <DialogHeader>
@@ -71,10 +74,13 @@ const BookRecommendation: React.FC<Book> = ({ title, author, forWhom, summary, i
                 </div>
               </DialogContent>
             </Dialog>
-            <Button variant="outline" size="sm" className="w-full sm:w-auto">More Details</Button>
-            <Button variant="outline" size="sm" className="w-full sm:w-auto">More Details</Button>
-            <Button variant="outline" size="sm" className="w-full sm:w-auto">More Details</Button>
-            <Button variant="outline" size="sm" className="w-full sm:w-auto">More Details</Button>
+
+            <Button variant="outline" size="sm" className="w-full sm:w-auto">Buy now</Button>
+            <Button variant="outline" size="sm" className="w-full sm:w-auto">Author info</Button>
+            <Button variant="outline" size="sm" className="w-full sm:w-auto">Insights</Button>
+            <Button variant="outline" size="sm" className="w-full sm:w-auto">Anecdotes</Button>
+            <Button variant="outline" size="sm" className="w-full sm:w-auto">Quotes</Button>
+            
           </div>
         </div>
         </div>

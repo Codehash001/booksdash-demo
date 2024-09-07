@@ -9,7 +9,7 @@ const AdditionalResource: React.FC<AdditionalResourceType> = ({ type, title, sum
   const IconComponent = type === 'podcast' ? Mic : type === 'video' ? Video : FileText;
   
   return (
-    <Card className="mb-2 hover:shadow-md transition-shadow duration-300 dark:bg-stone-900">
+    <Card className="mb-2 hover:shadow-md transition-shadow duration-300 dark:bg-stone-900 h-full flex justify-center items-center">
       <CardContent className="p-4">
         <div className="flex items-center mb-2">
           <div>
@@ -17,7 +17,6 @@ const AdditionalResource: React.FC<AdditionalResourceType> = ({ type, title, sum
           </div>
           <h4 className="text-md font-semibold">{title}</h4>
         </div>
-        <p className="text-sm">{summary}</p>
       </CardContent>
     </Card>
   );

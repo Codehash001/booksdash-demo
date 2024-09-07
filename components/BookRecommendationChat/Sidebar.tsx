@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { BookOpen, MessageSquare, X } from 'lucide-react';
+import { BookOpen, MessageSquare, Moon, Sun, X } from 'lucide-react';
 import useUser from '@/app/hook/useUser';
 import {
     Popover,
@@ -16,9 +16,11 @@ interface SidebarProps {
   isSidebarCollapsed: boolean;
   isDrawerOpen: boolean;
   closeDrawer: () => void;
+  darkMode: boolean;
+  toggleDarkMode: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isSidebarCollapsed, isDrawerOpen, closeDrawer }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isSidebarCollapsed, isDrawerOpen, closeDrawer , darkMode ,   toggleDarkMode,  }) => {
   const { t } = useTranslation();
   const { data: user, error } = useUser();
 
@@ -55,6 +57,27 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarCollapsed, isDrawerOpen, clo
           </Button>
         ))}
       </nav>
+      <div className={`${isSidebarCollapsed ? `px-2 justify-center` : 'px-4 py-2 justify-evenly mx-4 bg-gray-100 dark:bg-gray-900 border'} flex items-center rounded-3xl `}>
+        {!isSidebarCollapsed ?
+      <h1 className='text-sm font-medium'>Switch theme</h1> : <></> 
+      }
+      <button 
+            onClick={toggleDarkMode}
+            className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 bg-primary`}
+            role="switch"
+            aria-checked={darkMode}
+            aria-label={t('Toggle dark mode')}
+          >
+            <span className="sr-only">{t('Toggle dark mode')}</span>
+            <span
+              className={`absolute inset-0.5 flex items-center justify-center w-6 h-6 rounded-full bg-secondary shadow-sm transition-transform duration-300 ease-in-out ${
+                darkMode ? 'translate-x-5' : 'translate-x-0'
+              }`}
+            >
+              {darkMode ? <Moon size={15} /> : <Sun size={14} />}
+            </span>
+          </button>
+      </div>
       <Popover>
         <PopoverTrigger>
           <div className={isSidebarCollapsed ? `p-2` : 'p-4'}>
