@@ -38,7 +38,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
   ];
 
   return (
-    <div className="flex-1 overflow-y-auto p-4 relative">
+    <div className="flex-1 overflow-y-auto md:p-4 relative">
       <AnimatePresence>
         {!chatStarted && (
           <motion.div
