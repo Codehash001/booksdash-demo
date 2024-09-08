@@ -4,6 +4,7 @@ import { Separator } from '@/components/ui/separator';
 import { ChevronLeft, ChevronRight, Moon, Sun, Menu } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
+import BetaAlert from '../alert';
 
 interface HeaderProps {
   toggleSidebar: () => void;
@@ -20,6 +21,7 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <>
+      <div className="w-full absolute top-0 z-10"><BetaAlert /></div>
       <header className="sticky top-0 z-10 bg-secondary p-4 flex items-center justify-between">
         <div className="flex items-center">
           {/* Mobile menu button */}
