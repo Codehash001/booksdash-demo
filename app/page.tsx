@@ -55,7 +55,7 @@ const LandingPage: React.FC = () => {
           </section>
 
           <section id="features" className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Why Choose Booksdash?</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Why Choose Rexplore?</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <FeatureCard
                 icon={<Sparkles className="w-6 h-6" />}

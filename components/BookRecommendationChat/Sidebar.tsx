@@ -41,7 +41,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarCollapsed, isDrawerOpen, clo
           <div className="bg-black dark:bg-white text-white dark:text-black p-2 rounded-full">
             <BookOpen size={20} />
           </div>
-          {!isSidebarCollapsed && <span className="text-xl font-semibold">{t('Booksdash')}</span>}
+          {!isSidebarCollapsed && <span className="text-xl font-semibold">{t('Rexplore')}</span>}
         </div>
       </div>
       <nav className="flex-grow overflow-y-auto p-4">

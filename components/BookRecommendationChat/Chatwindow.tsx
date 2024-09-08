@@ -63,7 +63,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                 <div className="bg-black dark:bg-white text-white dark:text-black p-2 rounded-full">
                   <BookOpen size={20} />
                 </div>
-                <h1 className="text-2xl sm:text-3xl font-semibold">Welcome to Booksdash</h1>
+                <h1 className="text-2xl sm:text-3xl font-semibold">Welcome to Rexplore</h1>
               </div>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">What is on your mind?</p>
             </motion.div>

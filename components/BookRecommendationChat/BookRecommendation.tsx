@@ -48,7 +48,7 @@ const BookRecommendation: React.FC<Book> = ({ title, author, forWhom, summary, i
             <BookOpen size={20} />
           </div>
                   <p className="text-center mb-6">
-                    Get instant access to comprehensive book summaries with our BooksDash app. 
+                    Get instant access to comprehensive book summaries with our Rexplore app. 
                     Download now and start reading smarter!
                   </p>
                   <div className="flex justify-center space-x-4 w-full">

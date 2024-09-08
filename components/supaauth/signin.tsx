@@ -47,7 +47,7 @@ export default function SignIn() {
 					<div className="bg-black dark:bg-white text-white dark:text-black p-2 rounded-full">
             <BookOpen size={20} />
           </div>
-					<h1 className="font-bold text-lg">Sign in to BooksDash</h1>
+					<h1 className="font-bold text-lg">Sign in to Rexplore</h1>
 					</div>
 					<p className="text-sm">
 						Welcome back! Please sign in to continue
