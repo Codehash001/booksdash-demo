@@ -1,7 +1,8 @@
 {
-  "name": "Rexplore",
+  "name": "rexplore",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rexplore.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -26,15 +26,15 @@ const BookRecommendation: React.FC<Book> = ({ title, author, forWhom, summary, i
 
   return (
     <Card className="md:mb-4 hover:shadow-lg transition-shadow duration-300 dark:bg-stone-900">
-      <CardContent className="p-4 flex flex-col ">
+      <CardContent className="p-2 md:p-4 flex flex-col ">
       <div className='md:hidden flex flex-col'>
-          <h3 className="text-lg font-semibold text-foreground">{title}</h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400">{author}</p>
-          <div className="flex items-center mt-1">
+          <h3 className="font-semibold text-foreground">{title}</h3>
+          <p className="text-xs text-gray-600 dark:text-gray-400">{author}</p>
+          <div className="flex items-center mt-2">
                 {renderStars(rating)}
                 <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">{rating.toFixed(1)}</span>
               </div>
-          <p className="text-sm text-gray-600 dark:text-gray-400 my-2"><strong>For:</strong> {forWhom}</p>
+          <p className="text-xs text-gray-600 dark:text-gray-400 my-2"><strong>For:</strong> {forWhom}</p>
           </div>
         <div className='flex flex-row items-start'>
         <div className=" mb-4 sm:mb-0 mr-4 w-[80%]  ">
@@ -42,7 +42,7 @@ const BookRecommendation: React.FC<Book> = ({ title, author, forWhom, summary, i
           
           <p className="md:text-sm mt-2 mb-4 text-xs hidden md:flex ">{summary}</p>
         </div>
-        <div className="md:w-[120%] w-[60%]">
+        <div className="md:w-[120%] w-[65%]">
           <div className='hidden md:flex flex-col'>
           <h1 className="text-lg font-semibold text-foreground">{title}</h1>
           <p className="text-sm text-gray-600 dark:text-gray-400">{author}</p>

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowBigDownDash, BookOpen, ChevronDown, Send } from 'lucide-react';
+import { ArrowBigDownDash, ArrowRight, BookOpen, ChevronDown, Send } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import BookRecommendation from './BookRecommendation';
 import AdditionalResource from './AdditionalResource';
@@ -63,9 +63,9 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                 <div className="bg-black dark:bg-white text-white dark:text-black p-2 rounded-full">
                   <BookOpen size={20} />
                 </div>
-                <h1 className="text-2xl sm:text-3xl font-semibold">Welcome to Rexplore</h1>
+                <h1 className="text-2xl md:text-3xl font-semibold">Welcome to Rexplore</h1>
               </div>
-              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">What is on your mind?</p>
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300">What is on your mind?</p>
             </motion.div>
             <motion.div
               className="mb-8 w-full px-4"
@@ -100,9 +100,8 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                   className="flex-grow rounded-xl shadow-md h-10 dark:bg-stone-900 dark:text-gray-100 ring-gray-400 ring-1"
                   onKeyPress={(e) => e.key === 'Enter' && handleQuerySubmit()}
                 />
-                <Button size="icon" className="rounded-full h-10 w-10 shadow-md" onClick={handleQuerySubmit}>
-                  <Send size={16} />
-                </Button>
+                        <svg onClick={handleQuerySubmit} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className='shadow-xl ml-3 md:ml-4 h-10 w-10 md:h-11 md:w-11 border flex items-center justify-center p-2 rounded-3xl bg-primary fill-primary-foreground' ><path d="m21.426 11.095-17-8A1 1 0 0 0 3.03 4.242l1.212 4.849L12 12l-7.758 2.909-1.212 4.849a.998.998 0 0 0 1.396 1.147l17-8a1 1 0 0 0 0-1.81z" className='shadow-xl'></path></svg>
+
               </div>
             </motion.div>
           </motion.div>
@@ -157,9 +156,9 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                                   <BookRecommendation key={bookIndex} {...book} />
                                 ))}
                             </div>
-                            <div className='flex w-full justify-end'>
-                            <Button className='italic text-sm' variant={"outline"}>Load more {category} books
-                              <ArrowBigDownDash size={18} className='ml-2'/>
+                            <div className='flex w-full justify-end mt-2 md:mt-1'>
+                            <Button className='italic text-xs md:text-sm' variant={"outline"}>Load more {category} books
+                              <ArrowRight size={16} className='ml-2'/>
                             </Button>
                             </div>
                           </div>
