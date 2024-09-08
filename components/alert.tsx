@@ -32,7 +32,7 @@ const BetaAlert = () => {
           : 'opacity-100 translate-y-0 animate-in fade-in slide-in-from-bottom-4'}
       `}
     >
-      <AlertDescription className="font-medium flex items-center">
+      <AlertDescription className="font-medium flex items-center text-xs md:text-sm">
         <Info className="h-4 w-4 mr-2" />
         Welcome to Rexplore beta! We're crafting something special. Stay tuned.
       </AlertDescription>
