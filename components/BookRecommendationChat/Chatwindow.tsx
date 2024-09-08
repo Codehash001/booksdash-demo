@@ -159,7 +159,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                             </div>
                             <div className='flex w-full justify-end'>
                             <Button className='italic text-sm' variant={"outline"}>Load more {category} books
-                              <ArrowBigDownDash size={18}/>
+                              <ArrowBigDownDash size={18} className='ml-2'/>
                             </Button>
                             </div>
                           </div>
