@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
-        <div className="w-full absolute top-0">        <BetaAlert /></div>
+        <div className="w-full absolute top-0 z-10"><BetaAlert /></div>
         <QueryProvider>
           {children}
         </QueryProvider>
