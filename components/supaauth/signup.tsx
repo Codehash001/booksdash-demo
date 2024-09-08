@@ -274,7 +274,7 @@ export default function SignUp({ redirectTo }: { redirectTo: string }) {
 			<div
 				className={cn(
 					`w-full inline-block h-80 text-wrap align-top  transform transition-all space-y-3`,
-					isConfirmed ? "-translate-x-[105%]" : "translate-x-0"
+					isConfirmed ? "-translate-x-[105%]" : "translate-x-10"
 				)}
 			>
 				<div className="flex h-full items-center justify-center flex-col space-y-5">
