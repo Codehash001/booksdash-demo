@@ -162,7 +162,7 @@ export function SignInForm({ redirectTo }: { redirectTo: string }) {
 							!isPending ? "hidden" : "block animate-spin"
 						)}
 					/>
-					Continue
+					 Sign in
 				</Button>
 			</form>
 			<div className="text-center text-sm">
