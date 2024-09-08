@@ -76,6 +76,7 @@ const LandingPage: React.FC = () => {
             </div>
           </section>
           <section className="mb-20">
+            <h2 className="text-3xl font-bold mb-8 text-center">Experience it in action</h2>
             <ImageCarousel />
           </section>
           
