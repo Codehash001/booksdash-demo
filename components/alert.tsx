@@ -25,7 +25,7 @@ const BetaAlert = () => {
     <Alert 
       className={`
         rounded-sm border-b bg-secondary w-full flex justify-center relative 
-        text-stone-100 dark:text-stone-900 bg-stone-600 dark:bg-stone-200
+        dark:text-stone-100 text-stone-900 dark:bg-stone-600 bg-stone-200
         transition-all duration-300 ease-in-out
         ${isClosing 
           ? 'opacity-0 -translate-y-4' 
@@ -40,8 +40,8 @@ const BetaAlert = () => {
         onClick={handleClose}
         className="
           absolute right-4 top-1/2 transform -translate-y-1/2 
-          text-stone-100 dark:text-stone-900 
-          hover:text-stone-300 dark:hover:text-stone-700 
+          dark:text-stone-100 text-stone-900 
+          dark:hover:text-stone-300 hover:text-stone-700 
           focus:outline-none transition-colors duration-200
         "
         aria-label="Close notification"
