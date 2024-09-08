@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { BookOpen, ChevronDown, Send } from 'lucide-react';
+import { ArrowBigDownDash, BookOpen, ChevronDown, Send } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import BookRecommendation from './BookRecommendation';
 import AdditionalResource from './AdditionalResource';
@@ -158,7 +158,9 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                                 ))}
                             </div>
                             <div className='flex w-full justify-end'>
-                            <Button className='italic text-sm' variant={"link"}>Load more {category} books</Button>
+                            <Button className='italic text-sm' variant={"outline"}>Load more {category} books
+                              <ArrowBigDownDash size={18}/>
+                            </Button>
                             </div>
                           </div>
                         ))}
@@ -173,7 +175,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                       <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="additional-resources">
                           <AccordionTrigger className="text-sm font-semibold group">
-                            <h3 className="text-base sm:text-lg font-bold mb-2">Additional Resources</h3>
+                            <h3 className="text-base sm:text-lg font-bold mb-2">Explore additional Resources</h3>
                           </AccordionTrigger>
                           <AccordionContent>
                             <AnimatePresence>
