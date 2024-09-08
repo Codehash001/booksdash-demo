@@ -5,6 +5,7 @@ export interface Book {
     forWhom: string;
     summary: string;
     imageUrl: string;
+    rating: number
   }
   
   export interface AdditionalResource {

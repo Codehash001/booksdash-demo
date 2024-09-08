@@ -37,7 +37,7 @@ export default function Register() {
 					<div className="flex-1 h-[0.5px] w-full bg-zinc-400 dark:bg-zinc-800"></div>
 				</div>
 			</div>
-			<SignUp redirectTo={next || "/"} />
+			<SignUp redirectTo={next || "/dashboard"} />
 		</div>
 	);
 }

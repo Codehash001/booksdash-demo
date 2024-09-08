@@ -5,13 +5,24 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Book } from './types';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Apple, PlayCircle, BookOpen } from 'lucide-react';
+import { Apple, PlayCircle, BookOpen, Star } from 'lucide-react';
 import ShinyButton from '../magicui/shiny-button';
 import { BorderBeam } from "@/components/magicui/border-beam";
 import ShineBorder from '../magicui/shine-border';
 
-const BookRecommendation: React.FC<Book> = ({ title, author, forWhom, summary, imageUrl }) => {
+const BookRecommendation: React.FC<Book> = ({ title, author, forWhom, summary, imageUrl , rating }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const renderStars = (rating: number) => {
+    return Array.from({ length: 5 }, (_, index) => (
+      <Star
+        key={index}
+        className={`w-4 h-4 ${
+          index < rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
+        }`}
+      />
+    ));
+  };
 
   return (
     <Card className="md:mb-4 hover:shadow-lg transition-shadow duration-300 dark:bg-stone-900">
@@ -19,7 +30,11 @@ const BookRecommendation: React.FC<Book> = ({ title, author, forWhom, summary, i
       <div className='md:hidden flex flex-col'>
           <h3 className="text-lg font-semibold text-foreground">{title}</h3>
           <p className="text-sm text-gray-600 dark:text-gray-400">{author}</p>
-          <p className="text-sm text-gray-600 dark:text-gray-400 md:my-4 my-2"><strong>For:</strong> {forWhom}</p>
+          <div className="flex items-center mt-1">
+                {renderStars(rating)}
+                <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">{rating.toFixed(1)}</span>
+              </div>
+          <p className="text-sm text-gray-600 dark:text-gray-400 my-2"><strong>For:</strong> {forWhom}</p>
           </div>
         <div className='flex flex-row items-start'>
         <div className=" mb-4 sm:mb-0 mr-4 w-[80%]  ">
@@ -31,7 +46,11 @@ const BookRecommendation: React.FC<Book> = ({ title, author, forWhom, summary, i
           <div className='hidden md:flex flex-col'>
           <h1 className="text-lg font-semibold text-foreground">{title}</h1>
           <p className="text-sm text-gray-600 dark:text-gray-400">{author}</p>
-          <p className="text-sm text-gray-600 dark:text-gray-400 md:my-4 my-2"><strong>For:</strong> {forWhom}</p>
+          <div className="flex items-center mt-1">
+                {renderStars(rating)}
+                <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">{rating.toFixed(1)}</span>
+              </div>
+          <p className="text-sm text-gray-600 dark:text-gray-400  my-2"><strong>For:</strong> {forWhom}</p>
           </div>
           <div className="flex flex-col space-y-2 md:w-[80%]">
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>

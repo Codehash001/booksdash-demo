@@ -48,7 +48,8 @@ const BookRecommendationChat: React.FC = () => {
             author: t('Eric Ries'),
             forWhom: t('Entrepreneurs and business innovators'),
             summary: t('A new approach to business that\'s being adopted around the world.'),
-            imageUrl: 'https://static-01.daraz.lk/p/ec7cf79d40178dcae04f367394a6629d.jpg'
+            imageUrl: 'https://static-01.daraz.lk/p/ec7cf79d40178dcae04f367394a6629d.jpg',
+            rating:4.5
           },
           {
             category: t('Most Trending'),
@@ -56,7 +57,8 @@ const BookRecommendationChat: React.FC = () => {
             author: t('Jane Austen'),
             forWhom: t('Literary fiction enthusiasts'),
             summary: t('A classic novel of manners, morality, and marriage in Georgian England.'),
-            imageUrl:'https://m.media-amazon.com/images/I/81NLDvyAHrL._AC_UF1000,1000_QL80_.jpg'
+            imageUrl:'https://m.media-amazon.com/images/I/81NLDvyAHrL._AC_UF1000,1000_QL80_.jpg',
+            rating:4.5
           },
           {
             category: t('Most Popular'),
@@ -64,7 +66,8 @@ const BookRecommendationChat: React.FC = () => {
             author: t('Jim Collins'),
             forWhom: t('Business leaders and managers'),
             summary: t('Why some companies make the leap and others don\'t.'),
-            imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV3n8RwP-yKPKfSLFLKPgppOEXmtSE3ykk9A&s'
+            imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV3n8RwP-yKPKfSLFLKPgppOEXmtSE3ykk9A&s',
+            rating:3.5
           },
           {
             category: t('Most Popular'),
@@ -72,7 +75,8 @@ const BookRecommendationChat: React.FC = () => {
             author: t('Harper Lee'),
             forWhom: t('Readers interested in social justice themes'),
             summary: t('A powerful exploration of racial injustice and loss of innocence in the American South.'),
-            imageUrl:'https://m.media-amazon.com/images/I/81aY1lxk+9L._AC_UF1000,1000_QL80_.jpg'
+            imageUrl:'https://m.media-amazon.com/images/I/81aY1lxk+9L._AC_UF1000,1000_QL80_.jpg',
+            rating:4.0
           },
           {
             category: t('Most Recent'),
@@ -80,7 +84,8 @@ const BookRecommendationChat: React.FC = () => {
             author: t('Clayton M. Christensen'),
             forWhom: t('Business strategists and technology enthusiasts'),
             summary: t('When new technologies cause great firms to fail.'),
-            imageUrl:'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1347654027i/2615.jpg'
+            imageUrl:'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1347654027i/2615.jpg',
+            rating:4.1
           },
           {
             category: t('Most Recent'),
@@ -88,7 +93,8 @@ const BookRecommendationChat: React.FC = () => {
             author: t('Geoffrey A. Moore'),
             forWhom: t('Entrepreneurs and marketers'),
             summary: t('Marketing and selling high-tech products to mainstream customers.'),
-            imageUrl: 'https://jumpbooks.lk/ceruvef/uploads/2021/04/Crossing-the-Chasm.jpg'
+            imageUrl: 'https://jumpbooks.lk/ceruvef/uploads/2021/04/Crossing-the-Chasm.jpg',
+            rating:4.5
           }
           
         ],

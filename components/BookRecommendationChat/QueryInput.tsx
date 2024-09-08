@@ -29,9 +29,9 @@ const QueryInput: React.FC<QueryInputProps> = ({ query, setQuery, handleQuerySub
           className="flex-grow rounded-xl shadow-md h-10 dark:bg-black dark:text-gray-100 ring-gray-400 ring-1"
           onKeyPress={(e) => e.key === 'Enter' && handleQuerySubmit()}
         />
-        <Button size="icon" className='rounded-full h-10 w-10 shadow-md' onClick={handleQuerySubmit}>
-          <Send size={16} />
-        </Button>
+        <div className='rounded-full h-10 w-10 flex items-center justify-center border bg-primary' onClick={handleQuerySubmit}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className='fill-primary-foreground' ><path d="m21.426 11.095-17-8A1 1 0 0 0 3.03 4.242l1.212 4.849L12 12l-7.758 2.909-1.212 4.849a.998.998 0 0 0 1.396 1.147l17-8a1 1 0 0 0 0-1.81z"></path></svg>
+        </div>
       </div>
       <p className='text-xs font-medium opacity-75 w-full text-center mt-2'>Each query is not dependent on previous context.</p>
     </motion.div>
