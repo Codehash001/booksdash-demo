@@ -243,7 +243,7 @@ export default function SignUp({ redirectTo }: { redirectTo: string }) {
 					/>
 					<Button
 						type="submit"
-						className="w-full h-8 transition-all text-white flex items-center gap-2"
+						className="w-full h-8 transition-all text-primary-foreground flex items-center gap-2"
 						variant={"default"}
 					>
 						<AiOutlineLoading3Quarters

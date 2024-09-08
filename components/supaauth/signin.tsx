@@ -155,7 +155,7 @@ export function SignInForm({ redirectTo }: { redirectTo: string }) {
 				/>
 				<Button
 					type="submit"
-					className="w-full h-8 bg-primary transition-all text-white flex items-center gap-2"
+					className="w-full h-8 bg-primary transition-all text-primary-foreground flex items-center gap-2"
 				>
 					<AiOutlineLoading3Quarters
 						className={cn(
