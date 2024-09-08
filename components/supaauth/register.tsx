@@ -23,7 +23,7 @@ export default function Register() {
 					<div className="bg-black dark:bg-white text-white dark:text-black p-2 rounded-full">
             <BookOpen size={20} />
           </div>
-					<h1 className="font-bold text-lg">BooksDash</h1>
+					<h1 className="font-bold text-lg">Rexplore</h1>
 					</div>
 					<h1 className="font-bold">Create Account</h1>
 					<p className="text-sm">

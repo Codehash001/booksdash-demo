@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">Booksdash</h3>
+            <h3 className="text-lg font-semibold mb-4">                Rexplore</h3>
             <p className="text-sm">Discover your next great read with AI-powered recommendations.</p>
           </div>
           <div>
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-stone-300 dark:border-stone-700 text-center">
-          <p>&copy; {new Date().getFullYear()} Booksdash. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Rexplore. All rights reserved.</p>
         </div>
       </div>
     </footer>

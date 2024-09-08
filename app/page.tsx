@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BookOpen, ArrowRight, Sparkles, Users, TrendingUp } from 'lucide-react';
 import Footer from '@/components/footer';
+import ComparisonTable from '@/components/comparissionTable';
 
 const LandingPage: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const LandingPage: React.FC = () => {
           <div className="bg-black dark:bg-white text-white dark:text-black p-2 rounded-full">
             <BookOpen size={20} />
           </div>
-            <span className="text-2xl font-bold">Booksdash</span>
+            <span className="text-2xl font-bold">Rexplore</span>
           </div>
             <motion.h1 
               className="text-5xl md:text-6xl font-bold mb-6"
@@ -73,6 +74,7 @@ const LandingPage: React.FC = () => {
               />
             </div>
           </section>
+          <ComparisonTable/>
         </main>
       </div>
       <Footer />
