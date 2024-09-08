@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <>
-      <div className="w-full absolute top-0 z-10"><BetaAlert /></div>
+      <div className="w-full"><BetaAlert /></div>
       <header className="sticky top-0 z-10 bg-secondary p-4 flex items-center justify-between">
         <div className="flex items-center">
           {/* Mobile menu button */}
