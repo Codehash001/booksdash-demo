@@ -251,8 +251,7 @@ export default function SignUp({ redirectTo }: { redirectTo: string }) {
 								!isPending ? "hidden" : "block animate-spin"
 							)}
 						/>
-						Continue
-						<RiArrowRightSFill className=" size-4" />
+						Sign up
 					</Button>
 					<div className="text-center text-sm">
 						<h1>
