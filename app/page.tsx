@@ -6,10 +6,12 @@ import { BookOpen, ArrowRight, Sparkles, Users, TrendingUp, TimerIcon } from 'lu
 import Footer from '@/components/footer';
 import ComparisonTable from '@/components/comparissionTable';
 import ImageCarousel from '@/components/imageCarousel';
+import BetaAlert from '@/components/alert';
 
 const LandingPage: React.FC = () => {
   return (
-    <div className="min-h-[100dvh] bg-stone-100 dark:bg-stone-900 text-stone-800 dark:text-stone-200 w-full pt-4">
+    <div className="min-h-[100dvh] bg-stone-100 dark:bg-stone-900 text-stone-800 dark:text-stone-200 w-full pt-4 relative">
+              <div className="w-full absolute top-0 z-10"><BetaAlert /></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">
         <header className="flex justify-between items-center">
           <nav>
