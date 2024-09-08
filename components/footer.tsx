@@ -29,13 +29,13 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-stone-800 dark:hover:text-stone-200">
+              <a href="https://www.facebook.com/rexploreai" target="_blank" rel="noopener noreferrer" className="hover:text-stone-800 dark:hover:text-stone-200">
                 <Facebook size={20} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-stone-800 dark:hover:text-stone-200">
+              <a href="https://www.instagram.com/rexplore_ai" target="_blank" rel="noopener noreferrer" className="hover:text-stone-800 dark:hover:text-stone-200">
                 <Instagram size={20} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-stone-800 dark:hover:text-stone-200">
+              <a href="https://linkedin.com/company/rexploreai" target="_blank" rel="noopener noreferrer" className="hover:text-stone-800 dark:hover:text-stone-200">
                 <Linkedin size={20} />
               </a>
             </div>
