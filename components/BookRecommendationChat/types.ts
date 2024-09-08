@@ -9,8 +9,8 @@ export interface Book {
   
   export interface AdditionalResource {
     type: 'podcast' | 'video' | 'article';
-    title: string;
-    summary: string;
+    description: string;
+    headline: string;
   }
   
   export type ChatMessage = {

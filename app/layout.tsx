@@ -3,7 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "sonner";
 import QueryProvider from "@/components/query-provider";
-
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Info, Sparkles } from 'lucide-react';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,19 +28,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-
     <html lang="en">
-
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          <QueryProvider>
-        {children}
+        <Alert className="rounded-none border-b bg-secondary w-full flex justify-center"> 
+          <AlertDescription className="text-stone-900 dark:text-stone-100 font-medium flex items-center">
+          <Info className="h-4 w-4 mr-2" />
+            Welcome to Rexplore beta! We're crafting something special. Stay turned.
+          </AlertDescription>
+        </Alert>
+        <QueryProvider>
+          {children}
         </QueryProvider>
         <Toaster />
       </body>
-
     </html>
-
   );
 }

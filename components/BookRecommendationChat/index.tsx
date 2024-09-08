@@ -96,17 +96,23 @@ const BookRecommendationChat: React.FC = () => {
           {
             type: 'podcast' as const,
             title: t('Masters of Scale'),
-            summary: t('Reid Hoffman\'s podcast on how companies grow from zero to a gazillion.')
+            summary: t('Reid Hoffman\'s podcast on how companies grow from zero to a gazillion.'),
+            headline: t('Curated Podcasts'),
+            description: t('Get personalized podcast recommendations tailored to your query.')
           },
           {
             type: 'video' as const,
             title: t('TED Talk: The single biggest reason why startups succeed'),
-            summary: t('Bill Gross has founded a lot of startups, and incubated many others — and he got curious about why some succeeded and others failed.')
+            summary: t('Bill Gross has founded a lot of startups, and incubated many others — and he got curious about why some succeeded and others failed.'),
+            headline: t('Expert Videos'),
+            description: t('Discover expert videos selected to match your interests and learning goals.')
           },
           {
             type: 'article' as const,
             title: t('The Trillion-Dollar Vision of Dee Hock'),
-            summary: t('The founder of Visa has a radical new approach to business that could reshape the economy.')
+            summary: t('The founder of Visa has a radical new approach to business that could reshape the economy.'),
+            headline: t('Insightful Articles'),
+            description: t('Access well-researched articles tailored to provide valuable insights on your topics of interest.')
           }
         ]
       };

@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, ArrowRight, Sparkles, Users, TrendingUp } from 'lucide-react';
+import { BookOpen, ArrowRight, Sparkles, Users, TrendingUp, TimerIcon } from 'lucide-react';
 import Footer from '@/components/footer';
 import ComparisonTable from '@/components/comparissionTable';
 import ImageCarousel from '@/components/imageCarousel';
@@ -55,9 +55,9 @@ const LandingPage: React.FC = () => {
             </motion.div>
           </section>
 
-          <section id="features" className="mb-20">
+          <section id="features" className="mb-20 px-2 md:px-0">
             <h2 className="text-3xl font-bold mb-8 text-center">Why Choose Rexplore?</h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 ">
               <FeatureCard
                 icon={<Sparkles className="w-6 h-6" />}
                 title="AI-Powered Recommendations"
@@ -69,13 +69,13 @@ const LandingPage: React.FC = () => {
                 description="Discover the latest bestsellers and rising stars in the literary world."
               />
               <FeatureCard
-                icon={<Users className="w-6 h-6" />}
-                title="Community Insights"
-                description="Connect with fellow readers and share your thoughts on your favorite books."
+                icon={<TimerIcon className="w-6 h-6" />}
+                title="Save Time and Money"
+                description="Quickly search and gain valuable insights to make informed decisions efficiently and cost-effectively."
               />
             </div>
           </section>
-          <section className="mb-20">
+          <section className="mb-20 px-2">
             <h2 className="text-3xl font-bold mb-8 text-center">Experience it in action</h2>
             <ImageCarousel />
           </section>

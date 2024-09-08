@@ -28,7 +28,7 @@ const ImageCarousel = () => {
   );
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className='overflow-hidden max-w-screen-sm'>
       <Carousel
         plugins={inView ? [plugin.current] : []}
         className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-4xl mx-auto"

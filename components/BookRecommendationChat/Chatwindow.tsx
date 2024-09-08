@@ -173,7 +173,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
                       <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="additional-resources">
                           <AccordionTrigger className="text-sm font-semibold group">
-                            Additional Resources
+                            <h3 className="text-base sm:text-lg font-bold mb-2">Additional Resources</h3>
                           </AccordionTrigger>
                           <AccordionContent>
                             <AnimatePresence>
