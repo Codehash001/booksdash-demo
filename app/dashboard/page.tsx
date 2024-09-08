@@ -3,7 +3,7 @@ import BookRecommendationChat from "@/components/BookRecommendationChat";
 
 export default function Page() {
   return(
-    <div className="max-h-[200px]">
+    <div className="min-h-[100dvh]">
           <BookRecommendationChat />
     </div>
   )
