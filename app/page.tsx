@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { BookOpen, ArrowRight, Sparkles, Users, TrendingUp } from 'lucide-react';
 import Footer from '@/components/footer';
 import ComparisonTable from '@/components/comparissionTable';
+import ImageCarousel from '@/components/imageCarousel';
 
 const LandingPage: React.FC = () => {
   return (
@@ -74,6 +75,10 @@ const LandingPage: React.FC = () => {
               />
             </div>
           </section>
+          <section className="mb-20">
+            <ImageCarousel />
+          </section>
+          
           <ComparisonTable/>
         </main>
       </div>
