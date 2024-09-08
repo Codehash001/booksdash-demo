@@ -3,10 +3,11 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BookOpen, ArrowRight, Sparkles, Users, TrendingUp } from 'lucide-react';
+import Footer from '@/components/footer';
 
 const LandingPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-stone-100 dark:bg-stone-900 text-stone-800 dark:text-stone-200">
+    <div className="min-h-screen bg-stone-100 dark:bg-stone-900 text-stone-800 dark:text-stone-200 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <header className="flex justify-between items-center">
           <nav>
@@ -73,11 +74,8 @@ const LandingPage: React.FC = () => {
             </div>
           </section>
         </main>
-
-        <footer className="text-center text-stone-600 dark:text-stone-400">
-          <p>&copy; 2024 Booksdash. All rights reserved.</p>
-        </footer>
       </div>
+      <Footer />
     </div>
   );
 };
